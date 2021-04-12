@@ -9,9 +9,12 @@ body {
 }
 
 #container {
-    display: flex;
+    display: grid;
+    grid-template-columns: 33% 33% 33%;
+    grid-template-rows: 33% 33% 33%;
+    /* display: flex;
     flex-wrap: wrap;
-    justify-content: space-evenly;
+    justify-content: space-evenly; */
     background-color: rgba(0, 141, 54, 0.521);
     border-radius: 0.9rem;
 }
@@ -34,7 +37,26 @@ body {
     justify-content: space-between;
 }
 
-@media screen and (max-width:600px) {
+@media screen and (min-device-width: 800px) and
+        (max-device-width: 1280px) {
+
+    #container {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        grid-template-rows: auto;
+    }
+
+    .container-item {
+        justify-content: space-around;
+    }
+}
+
+@media screen and (max-width:799px) {
+
+    body {
+        min-width: 360px;
+    }
+
     #container {
         display: flex;
         flex-direction: column;
